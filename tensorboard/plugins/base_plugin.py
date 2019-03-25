@@ -73,6 +73,13 @@ class TBPlugin(object):
     """
     raise NotImplementedError()
 
+class TBPluginV2(TBPlugin):
+  version = 2
+
+  @abstractmethod
+  def webfile_path(self):
+    raise NotImplementedError()
+
 
 class TBContext(object):
   """Magic container of information passed from TensorBoard core to plugins.

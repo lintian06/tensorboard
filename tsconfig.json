@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "strict": false,
+    "lib": ["es2015.promise", "dom", "es2016"],
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "noResolve": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "React"
+ }
+}

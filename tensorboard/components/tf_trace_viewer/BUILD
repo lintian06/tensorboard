@@ -13,6 +13,7 @@ tf_web_library(
     path = "/tf-trace-viewer",
     deps = [
         ":tf-trace-viewer-helper",
+        "//tensorboard/plugin:plugin_guest",
     ],
 )
 

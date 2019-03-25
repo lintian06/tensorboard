@@ -4,3 +4,5 @@
 *.pyc
 *.egg-info/
 *.swp
+node_modules/
+package-lock.json

@@ -30,6 +30,7 @@ from __future__ import print_function
 
 import logging
 import os
+import pkg_resources
 
 from tensorboard.compat import tf
 from tensorboard.plugins import base_plugin
@@ -84,4 +85,13 @@ def get_plugins():
 
   :rtype: list[Union[base_plugin.TBLoader, Type[base_plugin.TBPlugin]]]
   """
-  return _PLUGINS[:]
+  third_party_plugins_loaders = [
+      entry_point.load()
+      for entry_point
+      in pkg_resources.iter_entry_points('tensorboard_plugins')]
+
+  third_party_plugins = [
+      get_plugin()[2]
+      for get_plugin in third_party_plugins_loaders]
+
+  return _PLUGINS[:] + third_party_plugins

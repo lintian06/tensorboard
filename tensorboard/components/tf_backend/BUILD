@@ -2,6 +2,7 @@ package(default_visibility = ["//tensorboard:internal"])
 
 load("//tensorboard/defs:defs.bzl", "tensorboard_webcomponent_library")
 load("//tensorboard/defs:web.bzl", "tf_web_library")
+load("@npm_bazel_typescript//:index.bzl", "ts_library")
 
 licenses(["notice"])  # Apache 2.0
 
@@ -49,4 +50,9 @@ tensorboard_webcomponent_library(
         "//tensorboard/components/vz_sorting:legacy",
         "//third_party/javascript/polymer/v1/polymer:lib",
     ],
+)
+
+ts_library(
+    name = "request_manager",
+    srcs = ["requestManager.ts"],
 )
