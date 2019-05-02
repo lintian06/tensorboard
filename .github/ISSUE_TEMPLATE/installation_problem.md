@@ -44,7 +44,7 @@ cd "$(mktemp -d)"
 export PYTHONNOUSERSITE=1  # for Conda users
 
 # Create a new virtualenv for testing purposes.
-virtualenv -q -p python3.6 --no-site-packages ./ve
+virtualenv -q -p python3.5 --no-site-packages ./ve
 . ./ve/bin/activate
 
 # Set up the virtualenv and install TensorBoard somehow...
